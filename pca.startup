@@ -7,12 +7,15 @@ chmod 700 /home/admin
 chmod 700 /home/admin/.ssh
 chmod 600 /home/admin/.ssh/id_rsa
 chmod 600 /home/admin/.ssh/id_rsa.pub
+chmod 600 /home/admin/.ssh/config
+chown admin /home/admin/.ssh/config
 chown admin /home/admin/.ssh/id_rsa.pub
 chown admin /home/admin/.ssh/id_rsa
 chown admin /home/admin/.ssh
 chown admin /home/admin
 chgrp admin /home/admin
 chgrp admin /home/admin/.ssh
+chgrp admin /home/admin/.ssh/config
 chgrp admin /home/admin/.ssh/id_rsa.pub
 chgrp admin /home/admin/.ssh/id_rsa
-su admin
+su admin &
