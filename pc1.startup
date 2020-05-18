@@ -1,2 +1,18 @@
 ifconfig eth0 1.2.4.1/24 up
 route add default gw 1.2.4.254
+
+echo -e "1234\n1234\n\n\n\n\n\nY\n" | adduser admin
+
+chmod 700 /home/admin
+chmod 700 /home/admin/.ssh
+chmod 600 /home/admin/.ssh/id_rsa
+chmod 600 /home/admin/.ssh/id_rsa.pub
+chown admin /home/admin/.ssh/id_rsa.pub
+chown admin /home/admin/.ssh/id_rsa
+chown admin /home/admin/.ssh
+chown admin /home/admin
+chgrp admin /home/admin
+chgrp admin /home/admin/.ssh
+chgrp admin /home/admin/.ssh/id_rsa.pub
+chgrp admin /home/admin/.ssh/id_rsa
+su admin
