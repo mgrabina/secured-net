@@ -1,0 +1,72 @@
+Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number: 1 (0x1)
+        Signature Algorithm: sha1WithRSAEncryption
+        Issuer: C=PT, ST=LS, L=Lisbon, O=IST, CN=IST CA/emailAddress=sirs@tecnico.pt
+        Validity
+            Not Before: May 18 02:31:06 2020 GMT
+            Not After : May 16 02:31:06 2030 GMT
+        Subject: C=PT, ST=LS, L=Lisbon, O=IST, CN=server/emailAddress=sirs@tecnico.pt
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+            RSA Public Key: (1024 bit)
+                Modulus (1024 bit):
+                    00:e4:61:9f:2f:7f:b1:a4:53:0f:c5:30:0a:0a:c3:
+                    73:58:10:bd:07:cc:b0:26:36:cd:03:df:f8:02:da:
+                    68:3b:4f:5a:39:1e:d7:0f:37:22:dc:3d:05:e3:c9:
+                    28:89:15:48:86:2b:5b:62:38:b2:b3:be:8b:da:ce:
+                    d1:6f:ca:cb:f9:19:a0:8a:89:de:47:d5:43:d3:78:
+                    c6:54:a0:95:5d:3f:41:a7:a4:7c:a2:b6:56:00:23:
+                    72:c5:ec:9e:a9:eb:94:38:d9:aa:eb:c7:20:a3:44:
+                    f9:ba:aa:e0:d4:f1:96:44:bd:71:50:55:ee:9d:7e:
+                    e0:b1:7d:d8:5d:f5:06:88:09
+                Exponent: 65537 (0x10001)
+        X509v3 extensions:
+            X509v3 Basic Constraints: 
+                CA:FALSE
+            Netscape Cert Type: 
+                SSL Server
+            Netscape Comment: 
+                Easy-RSA Generated Server Certificate
+            X509v3 Subject Key Identifier: 
+                B0:68:F6:B5:E7:FD:33:0E:CE:53:CB:6E:6D:AF:DF:55:4B:F7:FA:6F
+            X509v3 Authority Key Identifier: 
+                keyid:A8:D7:C0:0A:1A:26:EC:0D:A4:57:8B:FF:3C:C5:00:A0:90:59:DE:B4
+                DirName:/C=PT/ST=LS/L=Lisbon/O=IST/CN=IST CA/emailAddress=sirs@tecnico.pt
+                serial:F6:D7:23:4D:EF:F2:77:DB
+
+            X509v3 Extended Key Usage: 
+                TLS Web Server Authentication
+            X509v3 Key Usage: 
+                Digital Signature, Key Encipherment
+    Signature Algorithm: sha1WithRSAEncryption
+        71:1c:7f:b3:52:6f:0a:db:c2:0e:92:8f:7a:05:ba:0e:41:e6:
+        06:bd:f7:10:6d:6e:ff:73:1a:1c:a7:f0:e1:3c:98:79:44:63:
+        52:1f:37:9d:7f:14:ef:fc:41:87:f7:09:e6:08:5f:be:5c:45:
+        7c:55:0c:e3:49:78:ac:6f:d7:1b:a4:4b:1d:08:24:0b:b5:be:
+        c6:30:b9:20:b8:b4:dc:aa:a0:b0:2c:aa:5c:d0:c8:32:bd:ac:
+        a0:33:7e:77:d5:d3:87:5d:30:b8:b6:04:a7:35:f1:03:25:80:
+        5d:26:bd:68:95:5e:25:3e:f5:00:99:fa:aa:43:ec:b9:de:49:
+        a2:75
+-----BEGIN CERTIFICATE-----
+MIIDhDCCAu2gAwIBAgIBATANBgkqhkiG9w0BAQUFADBqMQswCQYDVQQGEwJQVDEL
+MAkGA1UECBMCTFMxDzANBgNVBAcTBkxpc2JvbjEMMAoGA1UEChMDSVNUMQ8wDQYD
+VQQDEwZJU1QgQ0ExHjAcBgkqhkiG9w0BCQEWD3NpcnNAdGVjbmljby5wdDAeFw0y
+MDA1MTgwMjMxMDZaFw0zMDA1MTYwMjMxMDZaMGoxCzAJBgNVBAYTAlBUMQswCQYD
+VQQIEwJMUzEPMA0GA1UEBxMGTGlzYm9uMQwwCgYDVQQKEwNJU1QxDzANBgNVBAMT
+BnNlcnZlcjEeMBwGCSqGSIb3DQEJARYPc2lyc0B0ZWNuaWNvLnB0MIGfMA0GCSqG
+SIb3DQEBAQUAA4GNADCBiQKBgQDkYZ8vf7GkUw/FMAoKw3NYEL0HzLAmNs0D3/gC
+2mg7T1o5HtcPNyLcPQXjySiJFUiGK1tiOLKzvovaztFvysv5GaCKid5H1UPTeMZU
+oJVdP0GnpHyitlYAI3LF7J6p65Q42arrxyCjRPm6quDU8ZZEvXFQVe6dfuCxfdhd
+9QaICQIDAQABo4IBODCCATQwCQYDVR0TBAIwADARBglghkgBhvhCAQEEBAMCBkAw
+NAYJYIZIAYb4QgENBCcWJUVhc3ktUlNBIEdlbmVyYXRlZCBTZXJ2ZXIgQ2VydGlm
+aWNhdGUwHQYDVR0OBBYEFLBo9rXn/TMOzlPLbm2v31VL9/pvMIGcBgNVHSMEgZQw
+gZGAFKjXwAoaJuwNpFeL/zzFAKCQWd60oW6kbDBqMQswCQYDVQQGEwJQVDELMAkG
+A1UECBMCTFMxDzANBgNVBAcTBkxpc2JvbjEMMAoGA1UEChMDSVNUMQ8wDQYDVQQD
+EwZJU1QgQ0ExHjAcBgkqhkiG9w0BCQEWD3NpcnNAdGVjbmljby5wdIIJAPbXI03v
+8nfbMBMGA1UdJQQMMAoGCCsGAQUFBwMBMAsGA1UdDwQEAwIFoDANBgkqhkiG9w0B
+AQUFAAOBgQBxHH+zUm8K28IOko96BboOQeYGvfcQbW7/cxocp/DhPJh5RGNSHzed
+fxTv/EGH9wnmCF++XEV8VQzjSXisb9cbpEsdCCQLtb7GMLkguLTcqqCwLKpc0Mgy
+vaygM3531dOHXTC4tgSnNfEDJYBdJr1olV4lPvUAmfqqQ+y53kmidQ==
+-----END CERTIFICATE-----
