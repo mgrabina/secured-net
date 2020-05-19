@@ -2,6 +2,30 @@ ifconfig eth0 9.2.3.254/24 up
 ifconfig eth1 6.6.6.2/24 up
 ip route add 0.0.0.0/0 via 6.6.6.1
 
+/* Para bloquear qualquer tráfego que não seja explicitamente permitido */
+iptables -P INPUT DROP
+iptables -P OUTPUT DROP
+iptables -P FORWARD DROP
+
+/* Para permitir ping */
+iptables -A FORWARD -p icmp --icmp-type echo-request -j ACCEPT
+iptables -A FORWARD -p icmp --icmp-type echo-reply -j ACCEPT
+
+
+/* Rede B pode aceder aos servidores de correio eletrónico da Internet e da WLZ(TCP/80) */
+iptables -A FORWARD -s 9.2.3.0/24 -p tcp --dport 80 -j ACCEPT
+
+/* Servidor de correio eletrónico responde a pedidos de dentro da empresa */
+iptables -A FORWARD -s 9.2.3.0/24 -d 1.2.3.2 -p tcp --dport 465 -j ACCEPT
+iptables -A FORWARD -s 1.2.3.2 -d 9.2.3.0/24 -p tcp --dport 465 -m conntrack --cstate ESTABLISHED -j ACCEPT
+
+/* File server só pode ser contactado por máquinas das redes A e B*/
+iptables -A FORWARD -s 9.2.3.0/24 -d 1.2.3.2 -p tcp --dport 465 -j ACCEPT
+iptables -A FORWARD -s 1.2.3.2 -d 9.2.3.0/24 -p tcp --dport 465 -m conntrack --cstate ESTABLISHED -j ACCEPT
+
+
+
+
 # Init VPN
 openvpn /etc/openvpn/client.conf &
 
