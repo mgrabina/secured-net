@@ -1,2 +1,4 @@
 ifconfig eth0 1.2.4.100/24 up
 route add default gw 1.2.4.254
+
+snort -d  -h 1.2.4.0/24  -c /etc/snort/snort.conf &

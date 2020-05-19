@@ -1,0 +1,4 @@
+alert tcp any any -> any any (content: "sirs18"; nocase; msg: "First Attack Detected!"; sid: 1000001;)
+alert tcp any any -> any any (content: "<SCRIPT>"; offset: 100;  nocase; msg: "Second Attack Detected!"; sid: 1000002;)
+
+
