@@ -3,30 +3,30 @@ ifconfig eth1 1.2.3.254/24 up
 ifconfig eth2 1.2.4.254/24 up
 ip route add 0.0.0.0/0 via 1.2.2.1
 
-/* Para bloquear qualquer tráfego que não seja explicitamente permitido */
+#/* Para bloquear qualquer tráfego que não seja explicitamente permitido */
 iptables -P INPUT DROP
 iptables -P OUTPUT DROP
 iptables -P FORWARD DROP
 
-/* Para permitir ping */
+#/* Para permitir ping */
 iptables -A FORWARD -p icmp --icmp-type echo-request -j ACCEPT
 iptables -A FORWARD -p icmp --icmp-type echo-reply -j ACCEPT
 
 
-/* Maquinas da internet podem apenas aceder ao servidor web da empresa (TCP/80)
+#/* Maquinas da internet podem apenas aceder ao servidor web da empresa (TCP/80)
 Internet é tudo menos abrantes 1.2.0.0/20 e braga 9.2.3.0/24*/
 iptables -A FORWARD -d 1.2.0.0/20 -p tcp --dport 80 -j ACCEPT
 
-/* Servidor web pode responder aos pedidos que recebe de qualquer máquina */
+#/* Servidor web pode responder aos pedidos que recebe de qualquer máquina */
 iptables -A FORWARD -s 1.2.3.1 -m conntrack --cstate ESTABLISHED -j ACCEPT
 
-/* Servidor de correio eletrónico responde a pedidos de dentro da empresa */
+#/* Servidor de correio eletrónico responde a pedidos de dentro da empresa */
 iptables -A FORWARD -s 1.2.0.0/20 -d 1.2.3.2 -p tcp --dport 465 -j ACCEPT
 iptables -A FORWARD -s 9.2.3.0/24 -d 1.2.3.2 -p tcp --dport 465 -j ACCEPT
 iptables -A FORWARD -s 1.2.3.2 -d 1.2.0.0/20 -p tcp --dport 465 -m conntrack --cstate ESTABLISHED -j ACCEPT
 iptables -A FORWARD -s 1.2.3.2 -d 9.2.3.0/24 -p tcp --dport 465 -m conntrack --cstate ESTABLISHED -j ACCEPT
 
-/* File server só pode ser contactado por máquinas das redes A e B*/
+#/* File server só pode ser contactado por máquinas das redes A e B*/
 iptables -A FORWARD -s 1.2.0.0/20 -d 1.2.4.55 -p tcp --dport 2000 -j ACCEPT
 iptables -A FORWARD -s 9.2.3.0/24 -d 1.2.4.55 -p tcp --dport 2000 -j ACCEPT
 iptables -A FORWARD -s 1.2.4.55 -p tcp --dport 2000 -m conntrack --cstate ESTABLISHED -j ACCEPT
